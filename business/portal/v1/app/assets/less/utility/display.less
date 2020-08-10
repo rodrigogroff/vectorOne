@@ -1,0 +1,54 @@
+/***************** 7.7) DISPLAY ****************/
+.flex{
+	display: flex;
+
+	&-sh-0{
+		flex-shrink:0;
+	}
+
+	&-center{
+		display: flex;
+		align-items:center;
+		justify-content: center;
+		height: 100vh;
+	}
+	&-wrap{
+		flex-wrap:wrap;
+	}
+	&-direction{
+		&-row{
+			flex-direction: row;
+		}
+		&-column{
+			flex-direction: column;
+		}
+	}
+}
+.a-i{
+	&-center{
+		align-items: center;
+	}
+	&-start{
+		align-items: start;
+	}
+	&-end{
+		align-items: end;
+	}
+}
+.j-c{
+	&-center{
+		justify-content: center;
+	}	
+	&-start{
+		justify-content: flex-start;
+	}
+	&-end{
+		justify-content: flex-end;
+	}	
+	&-around{
+		justify-content: space-around;
+	}	
+	&-between{
+		justify-content: space-between;
+	}
+}

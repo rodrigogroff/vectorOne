@@ -1,0 +1,87 @@
+/***************** 2.11) NAVS ****************/
+.nav{
+	&-link{
+		padding:5px 0;
+		color:@color-text-light;
+		&:hover, &.active{
+			color:@color-title;
+		}
+		&.disabled{
+			color:@color-text-fade;
+		}
+		&.active{
+			padding:5px 10px;
+		}
+	}
+	&-item{
+		margin-right:10px;
+		&:last-child{margin:0;}
+	}
+	&-primary{
+		.nav-link{
+			&:hover, &.active{
+				color:@color-primary;
+			}
+			&.disabled{
+				color:@color-text-light;
+			}
+		}
+		&.nav-disc{
+			.nav-link{
+				&.active{
+					&::after{background-color:@color-primary;}
+				}
+			}
+		}
+	}
+
+	&-disc{
+		.nav-link{
+			position: relative;
+			&::after{
+				content:'';
+				position: absolute;
+				top:16px;
+				left:0;
+				width:4px;
+				height:4px;
+				border-radius:100%;
+				background-color: @color-gray;
+			}
+		}
+	}
+
+	&-line{
+		.nav-item{
+			margin-right:5px;
+		}
+		.nav-link{
+			border-bottom:1px solid @color-gray-200;
+			&:hover, &.active{
+				border-color:@color-title;
+			}
+		}
+	}
+
+	&-fill{
+		.nav-link{
+			&.active{
+				color:#fff;
+				background-color: @color-main;
+			}
+		}
+	}
+
+	&-sm{
+		.nav-item{
+		}
+		.nav-link{
+			padding:1px 0;
+			font-size:12px;
+			line-height:normal;
+			&.active{
+				padding:1px 10px;
+			}
+		}
+	}
+}

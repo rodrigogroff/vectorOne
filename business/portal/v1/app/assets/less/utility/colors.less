@@ -1,0 +1,277 @@
+/***************** 7.1) COLORS ****************/
+// text colors
+.text{
+	&-title{color: @color-title !important;}
+	&-sub-title{color: @color-sub-title !important;}
+	&-default{color: @color-text !important;}
+	&-light{color: @color-text-light !important;}
+	&-fade{color: @color-text-fade!important;}
+	&-fader{color: fade(@color-text-fade,25)!important;}
+	&-white{color: @color-white !important;}
+	&-transparent{color: transparent !important;}
+	&-muted{color: @color-muted!important}
+
+	&-primary{
+		color:@color-primary!important;
+	}
+	&-success{
+		color:@color-success!important;
+	}	
+	&-danger{
+		color:@color-danger!important;
+	}	
+	&-warning{
+		color:@color-warning!important;
+	}	
+	&-info{
+		color:@color-info!important;
+	}	
+	&-dark{
+		color:@color-dark!important;
+	}	
+	&-secondary{
+		color:@color-secondary!important;
+	}	
+	&-purple{
+		color:@color-purple!important;
+	}	
+	&-cyan{
+		color:@color-cyan!important;
+	}	
+	&-pink{
+		color:@color-pink!important;
+	}	
+	&-brown{
+		color:@color-brown!important;
+	}
+}
+
+// text hover colors 
+.text{
+	&-hover{
+		&-primary{&:hover,&:focus{color:@color-primary!important}}
+		&-success{&:hover,&:focus{color:@color-success!important}}
+		&-danger{&:hover,&:focus{color:@color-danger!important}}
+		&-warning{&:hover,&:focus{color:@color-warning!important}}
+		&-info{&:hover,&:focus{color:@color-info!important}}
+		&-dark{&:hover,&:focus{color:@color-dark!important}}
+		&-secondary{&:hover,&:focus{color:@color-secondary!important}}
+		&-purple{&:hover,&:focus{color:@color-purple!important}}
+		&-cyan{&:hover,&:focus{color:@color-cyan!important}}
+		&-pink{&:hover,&:focus{color:@color-pink!important}}
+		&-brown{&:hover,&:focus{color:@color-brown!important}}
+		&-title{&:hover,&:focus{color:@color-title!important}}
+		&-sub-title{&:hover,&:focus{color:@color-sub-title!important}}
+		&-fade{&:hover,&:focus{color:@color-text!important}}
+		&-fader{&:hover,&:focus{color:fade(@color-text-fade,25)}}
+		&-white{&:hover,&:focus{color:white}}
+	}
+
+	// social colors
+	&-facebook{color: @color-facebook;}
+	&-twitter{color: @color-twitter;}
+	&-gplus{color: @color-google-plus;}
+	&-linkedin{color: @color-linkedin;}
+	&-instagram{color: @color-instagram;}
+	&-dribbble{color: @color-dribbble;}
+	&-behance{color: @color-behance;}
+	&-youtube{color: @color-youtube;}
+	&-flickr{color: @color-flickr;}
+	&-skype{color: @color-skype;}
+	&-rss{color: @color-rss;}
+	&-paypal{color: @color-paypal;}
+	&-visa{color: @color-visa;}
+}
+[class*="text-hover-"]{
+	&:extend(.transition-300);
+}
+
+
+// background colors
+.bg{
+	&-primary{
+		background-color: @color-primary!important;
+	}
+	&-success{
+		background-color: @color-success!important;
+	}	
+	&-danger{
+		background-color: @color-danger!important;
+	}	
+	&-warning{
+		background-color: @color-warning!important;
+	}	
+	&-info{
+		background-color: @color-info!important;
+	}	
+	&-dark{
+		background-color: @color-dark!important;
+	}	
+	&-secondary{
+		background-color: @color-secondary!important;
+	}	
+	&-purple{
+		background-color: @color-purple!important;
+	}	
+	&-cyan{
+		background-color: @color-cyan!important;
+	}	
+	&-pink{
+		background-color: @color-pink!important;
+	}	
+	&-brown{
+		background-color: @color-brown!important;
+	}	
+	&-light{
+		background-color: @color-light!important;
+	}
+	&-white{
+		background-color: white!important;
+	}
+	&-transparent{
+		background-color: transparent!important;
+	}
+}
+a.text-light{
+	&:hover, &:focus{
+		color: @color-text!important;
+	}
+}
+a.text-primary{
+	&:hover, &:focus{
+		color: @color-primary!important;
+	}
+}
+
+
+// background pale colors
+.bg{
+	&-pale{
+		&-primary{background-color:    @color-primary-pale}
+		&-success{background-color:    @color-success-pale}
+		&-danger{background-color:     @color-danger-pale}
+		&-warning{background-color:    @color-warning-pale}
+		&-info{background-color: 	   @color-info-pale}
+		&-dark{background-color: 	   @color-dark-pale}
+		&-secondary{background-color:  @color-secondary-pale}
+		&-purple{background-color: 	   @color-purple-pale}
+		&-cyan{background-color:       @color-cyan-pale}
+		&-pink{background-color:       @color-pink-pale}
+		&-brown{background-color:      @color-brown-pale}
+	}
+}
+
+// background gradient colors 
+.bg{
+	&-gradient{
+		&-primary{
+			.gradient(left,@color-main, darken(@color-main,25));
+		}	
+		&-success{
+			.gradient(left,@color-success, darken(@color-success,25));
+		}	
+		&-danger{
+			.gradient(left,@color-danger, darken(@color-danger,25));
+		}
+		&-warning{
+			.gradient(left,@color-warning, darken(@color-warning,25));
+		}
+		&-info{
+			.gradient(left,@color-info, darken(@color-info,25));
+		}
+		&-dark{
+			.gradient(left,@color-dark, darken(@color-dark,25));
+		}
+		&-success{
+			.gradient(left,@color-success, darken(@color-success,25));
+		}
+		&-secondary{
+			.gradient(left,@color-secondary, darken(@color-secondary,25));
+		}
+		&-purple{
+			.gradient(left,@color-purple, darken(@color-purple,25));
+		}
+		&-cyan{
+			.gradient(left,@color-cyan, darken(@color-cyan,25));
+		}
+		&-pink{
+			.gradient(left,@color-pink, darken(@color-pink,25));
+		}
+		&-brown{
+			.gradient(left,@color-brown, darken(@color-brown,25));
+		}
+		&-gray{
+			.gradient(left,#fff, @color-gray-100);
+		}
+		&-mix{
+			.gradient(left,@color-secondary, darken(@color-main,25));
+		}
+	}
+}
+
+
+
+// background gray colors
+.bg{
+	&-gray{
+		&-100{background-color: @color-gray-100;}
+		&-200{background-color: @color-gray-200;}
+		&-300{background-color: @color-gray-300;}
+		&-400{background-color: @color-gray-400;}
+		&-500{background-color: @color-gray-500;}
+		&-600{background-color: @color-gray-600;}
+		&-700{background-color: @color-gray-700;}
+		&-800{background-color: @color-gray-800;}
+		&-900{background-color: @color-gray-900;}
+	}
+}
+
+
+// border-colors
+.border{
+	&-primary{
+		border-color: @color-primary!important;
+	}
+	&-success{
+		border-color: @color-success!important;
+	}	
+	&-danger{
+		border-color: @color-danger!important;
+	}	
+	&-warning{
+		border-color: @color-warning!important;
+	}	
+	&-info{
+		border-color: @color-info!important;
+	}	
+	&-dark{
+		border-color: @color-dark!important;
+	}	
+	&-secondary{
+		border-color: @color-secondary!important;
+	}	
+	&-purple{
+		border-color: @color-purple!important;
+	}	
+	&-cyan{
+		border-color: @color-cyan!important;
+	}	
+	&-pink{
+		border-color: @color-pink!important;
+	}	
+	&-brown{
+		border-color: @color-brown!important;
+	}	
+	&-light{
+		border-color: @color-gray-200!important;
+	}
+	&-fade{
+		border-color: fade(#fff, 30)!important;
+	}
+	&-white{
+		border-color: white!important;
+	}
+	&-transparent{
+		border-color: transparent!important;
+	}
+}

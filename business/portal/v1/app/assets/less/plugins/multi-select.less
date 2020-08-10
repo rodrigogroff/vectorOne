@@ -1,0 +1,44 @@
+/***************** 6.4) MULTI SELECT ****************/
+.ms{
+	&-container{
+		display: flex;
+		width:100%;
+		.ms{
+			&-selectable{
+				float:none;
+				margin-right: 40px;
+				width:50%;
+				li{
+					&.ms-elem-selectable{
+						color:@color-text;
+						padding:5px 15px;
+					}
+					&.ms-hover{
+						color:#fff;
+						background-color:@color-main;
+					}
+				}
+			}
+			&-selection{
+				width:50%;
+				li{
+					&.ms-elem-selection{
+						color:@color-text;
+						padding:5px 15px;
+					}
+					&.ms-hover{
+						color:#fff;
+						background-color:@color-main;
+					}
+				}
+			}
+			&-list{
+				height: 270px;
+				border-color:fade(black,10);
+				&.ms-focus{
+					box-shadow:inset 0 1px 1px rgba(0,0,0,.075), 0 0 15px fade(@color-main,10);
+				}
+			}
+		}
+	}
+}

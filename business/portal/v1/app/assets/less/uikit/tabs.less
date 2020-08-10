@@ -1,0 +1,107 @@
+/***************** 2.9) TABS ****************/
+.nav{
+	&-tabs{
+		border-bottom:1px solid fade(black, 5);
+		.dropdown-menu{
+			border:1px solid fade(black, 5);
+		}
+		.nav-item{
+			margin-right:10px;
+			&:last-child{margin-right:0}
+			&.show{
+				.nav-link{
+				border-color:transparent;
+				border-bottom-color:@color-main;
+				}
+			}
+		}
+		.nav-link{
+			color:@color-text;
+			padding:8px 15px;
+			border:1px solid transparent;
+			transition:all 300ms;
+			i{
+				font-size:12px;
+				margin-right:5px;
+			}
+			&.active{
+				color:@color-main;
+				border-color:transparent;
+				border-bottom-color:@color-main;
+				padding:8px 15px;
+			}
+			&:hover, &:focus{
+				border-color:transparent;
+				border-bottom-color:@color-main;
+
+			}
+		}
+	}
+	&-flat{
+		background-color:@color-light;
+		border-color:transparent;
+		.nav-link{
+			color:@color-text;
+			&.active{
+				color:#fff;
+				font-weight:500;
+				background-color: transparent;
+				border-color:transparent;
+				border-radius:0;
+				background-color: @color-main;
+				&:hover{
+					color:#fff;
+				}
+			}
+			&:hover{
+				color:@color-title;
+				border-color:transparent;
+			}
+		}
+		.nav-item{
+			margin:0;
+		}
+	}
+	&-pills{
+		.nav-link{
+			padding:8px 25px;
+			border-radius:100px;
+			&.active{
+				background-color: @color-main;
+			}
+			&:hover{
+				color:@color-title;
+				&.active{
+					color:#fff;
+				}
+			}
+		}
+		.nav-item{
+			&.show{
+				.nav-link{
+					background-color: @color-main;
+				}
+			}
+		}
+	}
+
+	&-vertical{
+		border:0;
+		.nav-link{
+
+			padding-left:0;
+			&.active{
+				
+		padding-left:0;
+			}
+		}
+	}
+		
+}
+.tab{
+	&-content{
+		color:@color-text-light;
+		margin-top:20px;
+	}
+
+}

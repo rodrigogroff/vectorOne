@@ -1,0 +1,47 @@
+/***************** 3.6) FORM EXTRA ****************/
+fieldset{
+	margin-top:30px;
+}
+legend{
+	position: relative;
+	display: block;
+	font-size: 14px;
+	color:@color-main;
+	margin-bottom: 30px;
+	span{
+		padding: 0px 0.5rem 0 0;
+		background-color: #fff;
+		display: inline-block;
+		z-index: 2;
+		position: relative;
+	}
+	&::before{
+		content: "";
+		position: absolute;
+		left: 0px;
+		right: 0px;
+		height: 2px;
+		top: 50%;
+		background-color: fade(black,5);
+	}
+}
+
+label{
+	&.error{
+		color:@color-danger;
+	}
+}
+
+.has{
+	&-error{
+		.form-control{
+			border-color:@color-danger!important;
+		}
+	}
+	&-success{
+		.form-control{
+			border-color:@color-success!important;
+		}
+	}
+}
+

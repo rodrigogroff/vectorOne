@@ -1,0 +1,164 @@
+/***************** 4.3) AUTH ****************/
+.auth-boxed{
+	.gradient(bottom, @color-main, darken(@color-main,25));
+	.auth{
+		&-wrapper{
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			flex-direction: column;
+			height: 100vh;
+		}
+		&-content{
+			background-color: rgba(40, 40, 40, 0.7);
+			padding:20px;
+			width:300px;
+			border-radius:@border-radius;
+			box-shadow:0 0 30px fade(black,15);
+		}
+	
+		&-text{
+			position: relative;
+			margin-top: 10px;
+			margin-bottom: 40px;
+			text-align: center;
+			&::after{
+				content:'';
+				position: absolute;
+				bottom:-15px;
+				left:0;
+				right:0;
+				margin:auto;
+				width:35px;
+				height: 3px;
+				
+			}
+			p{
+				font-size: 16px;
+			}
+		}
+		&-footer{
+			text-align: center;
+			p{
+				color:@color-text-light;
+			}
+			a{
+				font-weight: 700;
+			}
+		}
+	
+		.mq-xs({
+			&-wrapper{
+				//background-color: #fff;
+			}
+			&-content{
+				box-shadow:none;
+			}
+		});
+	}
+	
+}
+
+.auth{
+	&-split{
+		display: flex;
+		height: 100vh;
+		flex:1;
+		
+		overflow: hidden;
+		&-left{
+			width:430px;
+			background-color: rgba(0, 0, 0, 0.2);
+			box-shadow:15px 0 30px fade(black,30);
+			display: flex;
+			align-items:center;
+			z-index: 225;
+		}
+		&-right{
+			flex:1;
+		}
+
+		.auth{
+			&-content{
+				padding:0 80px;
+				width:100%;
+				background-color: rgba(0, 0, 0, 0.2);
+			}
+	
+			&-text{
+				position: relative;
+				margin-top: 10px;
+				margin-bottom: 60px;
+				text-align: left;
+				&::after{
+					content:'';
+					position: absolute;
+					bottom:-15px;
+					left:0;
+					width:35px;
+					height: 3px;
+					background-color: @color-main;
+				}
+				p{
+					font-size: 16px;
+				}
+			}
+			
+			&-footer{
+				margin-top: 50px;
+				p{
+					color:@color-text-light;
+				}
+				a{
+					font-weight: 700;
+				}
+			}
+
+			&-image{
+				position: relative;
+				width:100%;
+				height: 100%;
+				background-size: cover;
+				background-repeat: no-repeat;
+				animation: kenburns 10s infinite alternate;
+				&::after{
+					content:'';
+					position: absolute;
+					top:0;
+					left:0;
+					width:100%;
+					height: 100%;
+					.gradient(bottom, fade(#fff,10), fade(black,20));
+				}
+			}
+		}
+
+		.mq-sm({
+			&-left{
+				flex:1;
+				width:100%;
+			}
+			&-right{
+				display: none;
+			}
+			.auth{
+				&-content{
+					
+					padding:0 20px;
+					width:300px;
+					margin:auto;
+				}
+				&-text, &-footer{
+					text-align: center;
+				}
+
+				&-social{
+					.btn {
+						width:100%;	
+						span{display: none;}
+					}
+				}
+			}
+		});
+	}
+}

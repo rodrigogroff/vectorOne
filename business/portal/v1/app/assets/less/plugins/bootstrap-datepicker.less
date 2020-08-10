@@ -1,0 +1,55 @@
+/***************** 6.2) BS DATEPICKER ****************/
+.datepicker{
+	padding:10px 20px 20px 20px;
+	text-align: center;
+	td, th{
+		.square(32px);
+	}
+	td{
+		border:1px solid fade(black,5);
+	}
+	table{
+		tr{
+			td{
+				&.old{
+					color:@color-text-light;
+				}
+				&.day{
+					border-radius:0;
+					&.focused, &:hover{
+						background-color: fade(@color-main,10);
+					}
+				}
+				&.active, &.today{
+						color:#fff;
+						background:@color-main!important;
+					&:hover{
+						color:#fff!important;
+						background-color:@color-main;
+					}
+				}
+			}
+		}
+	}
+	 .datepicker-switch:hover, .next:hover, .prev:hover, tfoot tr th:hover{
+		background-color: fade(@color-main,10);
+	 }
+}
+
+.datepicker-dropdown.datepicker-orient-top:before{
+	border-top:7px solid fade(black,7);
+}
+
+.datepicker-inline{
+	width:100%;
+	.datepicker{
+		width:100%;
+		padding:0;
+		td, th{
+			height: 38px;;
+		}
+		table{
+			width:100%;
+		}
+	}
+}

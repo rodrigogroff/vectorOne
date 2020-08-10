@@ -1,0 +1,251 @@
+/***************** 2.14) PAGINATION ****************/
+.pagination{
+	.page{
+		&-item{
+			.page-link{
+				line-height:normal;
+				color:@color-text;
+				border:2px solid @color-gray-200;
+				margin-left:-2px;
+				font-weight:600;
+				text-align:center;
+				font-size: 13px;
+				&:hover{
+					background-color:@color-gray-200;
+				}
+				&:focus{box-shadow:none; }
+			}
+			&.active{
+				.page-link{
+					background-color:@color-gray-200;
+				}
+			}
+		}
+	}	
+
+	// flat
+	&-flat{
+		.page-item{
+			.page-link{
+				border-color:transparent;
+				background: 0;
+			}
+		}
+	}		
+	// seperate
+	&-seperate{
+		.page-item{
+			.page-link{
+				margin-right:7px;
+			}
+		}
+	}
+
+	// round
+	&-round{
+		.page-item{
+			&:first-child{
+				.page-link{
+					border-top-left-radius:100px;
+					border-bottom-left-radius:100px;
+				}
+			}
+			&:last-child{
+				.page-link{
+					border-top-right-radius:100px;
+					border-bottom-right-radius:100px;
+				}
+			}
+		}
+	}
+
+	// rounded
+	&-rounded{
+		.page-item{
+			.page-link{
+				border-radius:100%;
+				width:32px;
+				height:32px;
+			}
+		}
+	}
+
+	&-fill-rounded{
+		.page-item{
+			margin-right:5px; &:last-child{margin-right:0}
+			.page-link{
+				border-radius:100%;
+				width:32px;
+				height:32px;
+				line-height: 32px;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+			}
+		}
+	}
+
+	&-primary{
+		.page-item{
+			.page-link{
+				color:@color-primary;
+				border-color:@color-primary
+			}
+			&.active, &:hover{
+				.page-link{
+					color:#fff;
+					background-color: @color-primary;
+				}
+			}
+		}
+	}
+
+	&-secondary{
+		.page-item{
+			.page-link{
+				color:@color-secondary;
+				border-color:@color-secondary
+			}
+			&.active, &:hover{
+				.page-link{
+					color:#fff;
+					background-color: @color-secondary;
+				}
+			}
+		}
+	}
+
+	&-success{
+		.page-item{
+			.page-link{
+				color:@color-success;
+				border-color:@color-success
+			}
+			&.active, &:hover{
+				.page-link{
+					color:#fff;
+					background-color: @color-success;
+				}
+			}
+		}
+	}	
+	&-info{
+		.page-item{
+			.page-link{
+				color:@color-info;
+				border-color:@color-info
+			}
+			&.active, &:hover{
+				.page-link{
+					color:#fff;
+					background-color: @color-info;
+				}
+			}
+		}
+	}	
+	&-danger{
+		.page-item{
+			.page-link{
+				color:@color-danger;
+				border-color:@color-danger
+			}
+			&.active, &:hover{
+				.page-link{
+					color:#fff;
+					background-color: @color-danger;
+				}
+			}
+		}
+	}
+	&-warning{
+		.page-item{
+			.page-link{
+				color:@color-warning;
+				border-color:@color-warning
+			}
+			&.active, &:hover{
+				.page-link{
+					color:#fff;
+					background-color: @color-warning;
+				}
+			}
+		}
+	}
+	&-dark{
+		.page-item{
+			.page-link{
+				color:@color-dark;
+				border-color:@color-dark
+			}
+			&.active, &:hover{
+				.page-link{
+					color:#fff;
+					background-color: @color-dark;
+				}
+			}
+		}
+	}
+	&-purple{
+		.page-item{
+			.page-link{
+				color:@color-purple;
+				border-color:@color-purple
+			}
+			&.active, &:hover{
+				.page-link{
+					color:#fff;
+					background-color: @color-purple;
+				}
+			}
+		}
+	}
+	&-cyan{
+		.page-item{
+			.page-link{
+				color:@color-cyan;
+				border-color:@color-cyan
+			}
+			&.active, &:hover{
+				.page-link{
+					color:#fff;
+					background-color: @color-cyan;
+				}
+			}
+		}
+	}
+	&-pink{
+		.page-item{
+			.page-link{
+				color:@color-pink;
+				border-color:@color-pink
+			}
+			&.active, &:hover{
+				.page-link{
+					color:#fff;
+					background-color: @color-pink;
+				}
+			}
+		}
+	}
+	&-brown{
+		.page-item{
+			.page-link{
+				color:@color-brown;
+				border-color:@color-brown
+			}
+			&.active, &:hover{
+				.page-link{
+					color:#fff;
+					background-color: @color-brown;
+				}
+			}
+		}
+	}
+}
+
+
+ul, ol{
+	&.pagination{
+		margin-bottom: 0;
+	}
+}

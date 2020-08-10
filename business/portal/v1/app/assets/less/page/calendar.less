@@ -1,0 +1,126 @@
+/***************** 4.7) CALENDAR ****************/
+.calendar{
+	.fc{
+		&-unthemed &-content, &-unthemed &-divider, &-unthemed &-list-heading td, 
+		&-unthemed &-list-view, &-unthemed &-popover, &-unthemed &-row, 
+		&-unthemed tbody, &-unthemed td, &-unthemed th, &-unthemed thead{
+			border-color:fade(black, 5)!important;
+		}
+		&-event{
+			background-color: @color-main;
+			border:0;
+			color:@color-text!important;
+			padding:3px 10px;
+			margin:2px;
+			border-radius:0;
+		}
+		& &-toolbar .fc-left > h2{
+			font-weight:600;
+			font-size:22px;
+			letter-spacing: -.5px;
+			color:@color-title;
+		}
+		&-day-grid-event {
+			> div .fc-time{
+				font-weight: 400;
+			}
+		}
+		a{color:@color-text!important;}
+		&-day{
+			background-color: fade(#fff,50);
+		}
+		&-content{
+			color:#fff;
+		}
+		&-view {
+			.fc-day-number{
+				padding:15px 15px;
+			}
+			.fc-other-month{
+				background-color:fade(@color-gray-200,5);
+			}
+		}
+
+		&-head-container {
+			.fc-day-header{
+				text-transform: uppercase;
+				padding: 5px 0;
+				font-size: 12px;
+			}
+		}
+
+		&-header-toolbar{
+			h2{
+				line-height: normal;
+			}
+			button{
+				color:@color-text;
+				background-color: #fff;
+				background-image: none;
+				border-color:fade(black,7);
+				&.fc-state-active{
+					background-color: @color-gray-200;
+				
+					box-shadow:none;
+				}
+				&:focus{
+					outline:none;
+				}
+			}
+		}
+
+	}
+	.fc-toolbar.fc-header-toolbar{margin-bottom:15px!important;}
+
+	.mq-xs({
+		.fc-scroller{
+			height: 280px!important;
+		}
+		.fc-header-toolbar{
+			display: flex;
+			align-items: center;
+			flex-direction: column;
+			h2{
+				font-size: 18px;
+			}
+			.fc-left{
+				margin-bottom: 10px;
+			}
+			.fc-center{margin-top: 10px;}
+		}
+	});
+
+	.mq-sm({	
+		.fc .fc-toolbar{
+			display: flex;
+			flex-direction:column;
+			align-items: center;
+			.fc-left{
+				float:none;
+				.clear;
+				> h2{
+					font-size:16px;
+					margin-bottom:5px;
+				}
+			}
+		}
+		.fc-header-toolbar{
+			h2{
+				font-size: 16px;
+				margin-top:0;
+			}
+		}
+		.fc-button{
+			font-size:12px!important;
+		}
+		table th{
+			font-size:10px;
+		}
+		table .fc-body{
+			font-size:12px;
+		}
+		.fc-scroller{
+			height:auto!important;
+		}
+	}); 
+}

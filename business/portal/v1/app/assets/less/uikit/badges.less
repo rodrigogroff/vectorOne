@@ -1,0 +1,286 @@
+/***************** 2.8) BADGES ****************/
+.badge{
+	padding:.20em .5em;
+	font-size: 70%;
+	font-weight: 500;
+	border-radius: 3px;
+	border:1px solid transparent;
+	vertical-align: middle;
+	line-height: 1.2;
+	&.badge{
+		&-dot, &-dot-outline{
+			.square(8px);
+			display: inline-block;
+			padding:0;
+			border-radius: 100%;
+			&.badge{
+				&-sm{
+					.square(6px);
+				}
+				&-lg{
+					.square(10px);
+				}
+				&-xl{
+					.square(12px);
+				}
+				&-xxl{
+					.square(16px);
+				}
+			}
+		}
+		&-dot-outline{
+			border-width: 2px;
+			border-style: solid;
+			background-color: transparent;
+		}
+		&-outline{
+			border-width: 1px;
+			border-style: solid;
+			background-color: transparent;
+		}
+		&-dot-text{
+			position: relative;
+			&::before{
+				content:'';
+			}
+		}
+	}
+	&-pill{
+		border-radius: 100px;
+	}
+	&-primary, &-success, &-danger, &-warning, &-info,
+	&-dark, &-secondary, &-dark, &-purple, &-pink, &-brown{
+		color:#fff;
+	}  	
+	&-primary{
+		background-color: @color-primary;
+		&.badge-dot{
+			background-color: @color-primary;
+		}
+		&.badge-dot-outline{
+			border-color:@color-primary;
+		}
+		&.badge-outline{
+			color:@color-primary;
+			border-color:@color-primary;
+		}
+		&.badge-shadow{
+			box-shadow: 0 3px 10px fade(@color-primary, 40);
+		}
+	}
+
+	&-success{
+		background-color: @color-success;
+		&.badge-dot{
+			background-color: @color-success;
+		}
+		&.badge-dot-outline{
+			border-color:@color-success;
+		}
+		&.badge-outline{
+			color:@color-success;
+			border-color:@color-success;
+		}
+		&.badge-shadow{
+			box-shadow: 0 3px 10px fade(@color-success, 40);
+		}
+	}
+
+	&-danger{
+		background-color: @color-danger;
+		&.badge-dot{
+			background-color: @color-danger;
+		}
+		&.badge-dot-outline{
+			border-color:@color-danger;
+		}
+		&.badge-outline{
+			color:@color-danger;
+			border-color:@color-danger;
+		}
+		&.badge-shadow{
+			box-shadow: 0 3px 10px fade(@color-danger, 40);
+		}
+	}
+
+	&-warning{
+		color:darken(@color-warning,40);
+		background-color: @color-warning;
+		&.badge-dot{
+			background-color: @color-warning;
+		}
+		&.badge-dot-outline{
+			border-color:@color-warning;
+		}
+		&.badge-outline{
+			color:@color-warning;
+			border-color:@color-warning;
+		}
+		&.badge-shadow{
+			box-shadow: 0 3px 10px fade(@color-warning, 40);
+		}
+	}
+
+	&-info{
+		background-color: @color-info;
+		&.badge-dot{
+			background-color: @color-info;
+		}
+		&.badge-dot-outline{
+			border-color:@color-info;
+		}
+		&.badge-outline{
+			color:@color-info;
+			border-color:@color-info;
+		}
+		&.badge-shadow{
+			box-shadow: 0 3px 10px fade(@color-info, 40);
+		}
+	}
+
+	&-dark{
+		background-color: @color-dark;
+		&.badge-dot{
+			background-color: @color-dark;
+		}
+		&.badge-dot-outline{
+			border-color:@color-dark;
+		}
+		&.badge-outline{
+			color:@color-dark;
+			border-color:@color-dark;
+		}
+		&.badge-shadow{
+			box-shadow: 0 3px 10px fade(@color-dark, 40);
+		}
+	}
+
+	&-secondary{
+		background-color: @color-secondary;
+		&.badge-dot{
+			background-color: @color-secondary;
+		}
+		&.badge-dot-outline{
+			border-color:@color-secondary;
+		}
+		&.badge-outline{
+			color:@color-secondary;
+			border-color:@color-secondary;
+		}
+	}
+
+	&-light{
+		color:@color-text;
+		background-color: @color-gray-200;
+		&.badge-dot{
+			background-color: @color-gray-200;
+		}
+		&.badge-dot-outline{
+			border-color:@color-gray-200;
+		}
+		&.badge-outline{
+			color:@color-gray-200;
+			border-color:@color-gray-200;
+		}
+	}
+
+	&-purple{
+		background-color: @color-purple;
+		&.badge-dot{
+			background-color: @color-purple;
+		}
+		&.badge-dot-outline{
+			border-color:@color-purple;
+		}
+		&.badge-outline{
+			color:@color-purple;
+			border-color:@color-purple;
+		}
+		&.badge-shadow{
+			box-shadow: 0 3px 10px fade(@color-purple, 40);
+		}
+	}
+
+	&-cyan{
+		color:darken(@color-cyan,30);
+		background-color: @color-cyan;
+		&.badge-dot{
+			background-color: @color-cyan;
+		}
+		&.badge-dot-outline{
+			border-color:@color-cyan;
+		}
+		&.badge-outline{
+			color:darken(@color-cyan,10);
+			border-color:@color-cyan;
+		}
+		&.badge-shadow{
+			box-shadow: 0 3px 10px fade(@color-cyan, 40);
+		}
+	}
+
+	&-pink{
+		background-color: @color-pink;
+		&.badge-dot{
+			background-color: @color-pink;
+		}
+		&.badge-dot-outline{
+			border-color:@color-pink;
+		}
+		&.badge-outline{
+			color:@color-pink;
+			border-color:@color-pink;
+		}
+		&.badge-shadow{
+			box-shadow: 0 3px 10px fade(@color-pink, 40);
+		}
+	}
+
+	&-brown{
+		background-color: @color-brown;
+		&.badge-dot{
+			background-color: @color-brown;
+		}
+		&.badge-dot-outline{
+			border-color:@color-brown;
+		}
+		&.badge-outline{
+			color:@color-brown;
+			border-color:@color-brown;
+		}
+		&.badge-shadow{
+			box-shadow: 0 3px 10px fade(@color-brown, 40);
+		}
+	}
+}
+
+
+/*
+	Labels
+*/
+.label{
+    display: inline;
+ 	padding: 5px 10px;
+    font-size: 75%;
+    font-weight: 600;
+    line-height: 1;
+    color: #fff;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    &-primary{
+    	background:@color-main;
+    }    
+    &-success{
+    	background:@color-success;
+    }    
+    &-danger{
+    	background:@color-danger;
+    }    
+    &-warning{
+    	background:@color-warning;
+    }    
+    &-info{
+    	background:@color-info;
+    }
+}

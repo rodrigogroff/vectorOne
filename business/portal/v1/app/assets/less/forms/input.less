@@ -1,0 +1,193 @@
+/***************** 3.1) INPUTS ****************/
+.form{
+	&-group{
+		margin-bottom: 20px;
+	}
+	&-control{
+		padding: 4px 12px;
+		border-radius:@border-radius;
+		border-color:@color-gray-200;
+		color:@color-text-light;
+		line-height:20px;
+		border-width:2px!important;
+		transition:all 300ms;
+		&:focus{
+			border-color:@color-main;
+			box-shadow:none;
+			&[readonly]{
+				box-shadow:none;
+				border-color:@color-gray-200;
+			}
+		}
+
+		&[readonly]{
+			background-color: @color-light;
+		}
+		&:disabled{
+			background-color: @color-gray-200;
+		}
+
+		&::-webkit-input-placeholder { 
+	  		color: @color-text-light;
+		}
+		&::-moz-placeholder { 
+	  		color: @color-text-light;
+		}
+		&:-ms-input-placeholder { 
+	  		color: @color-text-light;
+		}
+		&-static{
+			font-size:12px;
+			color:@color-text-light;
+			padding:0;
+		}
+
+		// small
+		&-sm, .input-group-sm &, 
+		.input-group-sm>.input-group-addon, 
+		.input-group-sm>.input-group-btn>.btn{
+		    font-size: 12px;
+			padding: 2px 10px 2px;
+			height: 28px;
+		}
+
+		&-md, .input-group-md &, 
+		.input-group-md>.input-group-addon, 
+		.input-group-md>.input-group-btn>.btn {
+		    font-size: 14px;
+			padding: 4px 15px;
+			height: 30px;
+		}
+
+		&-lg, .input-group-lg &, 
+		.input-group-lg>.input-group-addon, 
+		.input-group-lg>.input-group-btn>.btn {
+		    font-size: 16px;
+			padding: 5px 15px;
+			height: 36px;
+		}
+		
+		// round
+		&-round, &-pill{
+			border-radius:10rem;
+
+			.form-control{
+				border-radius:10rem;
+			}
+
+			.input-group{
+				> .input-group-append{
+					span:last-child, div:last-child{
+						border-top-right-radius:10rem;
+						border-bottom-right-radius:10rem;
+					}
+				}
+
+				> .input-group-prepend{
+					span:first-child, div:first-child{
+						border-top-left-radius:10rem;
+						border-bottom-left-radius:10rem;
+					}
+				}
+			}
+		}
+	}
+}
+.input-group{
+	&-text{
+		color:@color-gray-500;
+		border-color:@color-gray-200;
+		background-color: @color-light;
+		padding-top:2px;
+		padding-bottom:4px;
+	}
+	>.form-control+.form-control{
+		margin-left:-2px;
+	}
+}
+
+.input-icon{
+	position:relative;
+	.icon{
+		width: 2.8rem;
+		position: absolute;
+		top:50%;
+		transform:translateY(-50%);
+		text-align: center;
+		color:@color-text-light;
+	}
+	&-left{
+		.form-control{padding-left:2.2rem;}
+	}
+	&-right{
+		.form-control{padding-right:2.2rem;}
+		.icon{
+			right:0;
+		}
+	}
+}
+
+select{
+	&.form-control:not([size]):not([multiple]){
+		height:32px;
+		padding-left: 8px;
+	}
+
+	&.form-control-sm:not([size]):not([multiple]){
+		height:28px;
+		padding-left: 8px;
+	}	
+	
+	&.form-control-lg:not([size]):not([multiple]){
+		height:36px;
+		padding-left: 8px;
+	}
+
+}
+
+label{
+	&.require, &.required{
+		&::after{
+			content:'*';
+			color:@color-main;
+			font-size:16px;
+			margin-left:5px;
+		}
+	}
+}
+
+[class*="has-"]{
+	.form-control{
+		&:focus{
+			box-shadow:none;
+		}
+	}
+}
+.has{
+	&-success{
+		.col-form-label, .custom-control, .form-check-label, .form-control-feedback, .form-control-label{
+			color:@color-success;
+		}
+		.form-control-success{
+			border-color:@color-success;
+		}
+	}
+
+	&-warning{
+		.col-form-label, .custom-control, .form-check-label, .form-control-feedback, .form-control-label{
+			color:@color-warning;
+		}
+		.form-control-warning{
+			border-color:@color-warning;
+		}
+	}
+
+	&-danger{
+		.col-form-label, .custom-control, .form-check-label, .form-control-feedback, .form-control-label{
+			color:@color-danger;
+		}
+		.form-control-danger{
+			border-color:@color-danger;
+		}
+	}
+}

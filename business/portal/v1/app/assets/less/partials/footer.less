@@ -1,0 +1,37 @@
+/***************** 1.6) FOOTER ****************/
+
+footer{
+	position: absolute;
+	bottom:0;
+	left:0; right:0;
+	width:100%;
+	border-top:1px solid fade(black, 5);
+	background-color: fade(#fff, 50);
+	height: @footer-height;
+	display: flex;
+	align-items: center;
+	.footer-content{
+		display:flex;
+		justify-content: space-between;
+		font-size: 13px;
+		p{
+			margin:0;
+			color:@color-text;
+			> a{
+
+				color:@color-main;
+			}
+		}
+	}
+
+	.mq-md({
+		
+		display:none;
+	});
+	.mq-xs({
+		.footer-content{
+			flex-direction:column;
+			text-align:center;
+		}
+	});
+}
