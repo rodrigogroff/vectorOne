@@ -88,45 +88,30 @@ namespace GameSystem
 
             #region - acceleration vectors - 
 
-            if (accelX > 8) accelX = 8;
+            float steps = 0;
 
-            float stepsx = 0, stepsy = 0;
-
-            switch (accelX)
+            switch (accel)
             {
-                case 1: stepsx = 0.2F; break;
-                case 2: stepsx = 0.4F; break;
-                case 3: stepsx = 0.6F; break;
-                case 4: stepsx = 1.0F; break;
-                case 5: stepsx = 1.5F; break;
-                case 6: stepsx = 2.0F; break;
-                case 7: stepsx = 3.0F; break;
-                case 8: stepsx = 4.0F; break;
-            }
-
-            if (accelY > 8) accelY = 8;
-
-            switch (accelY)
-            {
-                case 1: stepsy = 0.2F; break;
-                case 2: stepsy = 0.4F; break;
-                case 3: stepsy = 0.6F; break;
-                case 4: stepsy = 1.0F; break;
-                case 5: stepsy = 1.5F; break;
-                case 6: stepsy = 2.0F; break;
-                case 7: stepsy = 3.0F; break;
-                case 8: stepsy = 4.0F; break;
+                case 1: steps = 1.0F; break;
+                case 2: steps = 2.0F; break;
+                case 3: steps = 3.5F; break;
+                case 4: steps = 5.0F; break;
+                default: case 5: steps = 7.0F; break;
             }
 
             #endregion
 
-            if (moveRight) { MyGlobalPosition.X += stepsx; accelX++; }
-            if (moveLeft) { MyGlobalPosition.X -= stepsx; accelX++; }
-            if (moveDown) { MyGlobalPosition.Y += stepsy; accelY++; }
-            if (moveUp) { MyGlobalPosition.Y -= stepsy; accelY++; }            
+            if (moveRight) MyGlobalPosition.X += steps;
+            if (moveLeft) MyGlobalPosition.X -= steps;
+            if (moveDown) MyGlobalPosition.Y += steps;
+            if (moveUp) MyGlobalPosition.Y -= steps;
 
-            if (!moveRight && !moveLeft) accelX = 1;
-            if (!moveUp && !moveDown) accelY = 1;
+            if (++accel > 5) 
+                accel = 5;
+
+            if (!moveRight && !moveLeft && !moveUp && !moveDown) 
+                if (accel > 1) 
+                    --accel;
         }
 
 		public void DeployOption()

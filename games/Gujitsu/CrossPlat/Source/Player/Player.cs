@@ -21,8 +21,7 @@ namespace GameSystem
 		int powerLevel = 1, // start power
 			curFrame = 14,  // main image star index
 			fireTimer = 1,  // counter 			
-            accelX = 1, 
-            accelY = 1;
+			accel = 1;
 
 		bool IsAutoFire = false;
 

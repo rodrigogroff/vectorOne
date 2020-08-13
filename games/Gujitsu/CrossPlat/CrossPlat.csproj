@@ -14,6 +14,22 @@
     <FileAlignment>512</FileAlignment>
     <MonoGamePlatform>DesktopGL</MonoGamePlatform>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <PublishUrl>C:\publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
     <DebugSymbols>true</DebugSymbols>
@@ -40,6 +56,18 @@
   </PropertyGroup>
   <PropertyGroup>
     <ApplicationManifest>app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>BB3233D48AE53197CA6005A811E725FA5785465C</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>CrossPlat_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Program.cs" />
@@ -135,22 +163,6 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="app.manifest" />
-    <None Include="bin\DesktopGL\AnyCPU\Debug\libopenal.1.dylib" />
-    <None Include="bin\DesktopGL\AnyCPU\Debug\libSDL2-2.0.0.dylib" />
-    <None Include="bin\DesktopGL\AnyCPU\Debug\MonoGame.Framework.dll.config" />
-    <None Include="bin\DesktopGL\AnyCPU\Debug\x64\libopenal.so.1" />
-    <None Include="bin\DesktopGL\AnyCPU\Debug\x64\libSDL2-2.0.so.0" />
-    <None Include="bin\DesktopGL\AnyCPU\Debug\x86\libopenal.so.1" />
-    <None Include="bin\DesktopGL\AnyCPU\Debug\x86\libSDL2-2.0.so.0" />
-    <None Include="bin\DesktopGL\AnyCPU\Release\Content\mainFont.xnb" />
-    <None Include="bin\DesktopGL\AnyCPU\Release\libopenal.1.dylib" />
-    <None Include="bin\DesktopGL\AnyCPU\Release\libSDL2-2.0.0.dylib" />
-    <None Include="bin\DesktopGL\AnyCPU\Release\mainFont.xnb" />
-    <None Include="bin\DesktopGL\AnyCPU\Release\MonoGame.Framework.dll.config" />
-    <None Include="bin\DesktopGL\AnyCPU\Release\x64\libopenal.so.1" />
-    <None Include="bin\DesktopGL\AnyCPU\Release\x64\libSDL2-2.0.so.0" />
-    <None Include="bin\DesktopGL\AnyCPU\Release\x86\libopenal.so.1" />
-    <None Include="bin\DesktopGL\AnyCPU\Release\x86\libSDL2-2.0.so.0" />
     <None Include="Content\3d\CosmicWasp\.mayaSwatches\cw_blue.mb.swatches" />
     <None Include="Content\3d\CosmicWasp\CosmicWasp.FBX" />
     <None Include="Content\3d\CosmicWasp\cw_blue.mb" />
@@ -169,101 +181,9 @@
     <None Include="Content\obj\DesktopGL\Content\.mgcontent" />
     <None Include="Content\obj\DesktopGL\Content\.mgstats" />
     <None Include="Content\obj\DesktopGL\Content\mainFont.mgcontent" />
+    <None Include="CrossPlat_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="bin\DesktopGL\AnyCPU\Debug\CrossPlat.exe" />
-    <Content Include="bin\DesktopGL\AnyCPU\Debug\CrossPlat.pdb" />
-    <Content Include="bin\DesktopGL\AnyCPU\Debug\log.txt" />
-    <Content Include="bin\DesktopGL\AnyCPU\Debug\MonoGame.Framework.dll" />
-    <Content Include="bin\DesktopGL\AnyCPU\Debug\x64\SDL2.dll" />
-    <Content Include="bin\DesktopGL\AnyCPU\Debug\x64\soft_oal.dll" />
-    <Content Include="bin\DesktopGL\AnyCPU\Debug\x86\SDL2.dll" />
-    <Content Include="bin\DesktopGL\AnyCPU\Debug\x86\soft_oal.dll" />
-    <Content Include="bin\DesktopGL\AnyCPU\Release\Content\Images\Bg\bg.png" />
-    <Content Include="bin\DesktopGL\AnyCPU\Release\Content\Images\Bg\bg1.png" />
-    <Content Include="bin\DesktopGL\AnyCPU\Release\Content\Images\Bg\bg2.png" />
-    <Content Include="bin\DesktopGL\AnyCPU\Release\Content\Images\Bg\bg3.png" />
-    <Content Include="bin\DesktopGL\AnyCPU\Release\Content\Images\Bg\brick1.png" />
-    <Content Include="bin\DesktopGL\AnyCPU\Release\Content\Images\Bg\brick2.png" />
-    <Content Include="bin\DesktopGL\AnyCPU\Release\Content\Images\Enemy\enemy1.png" />
-    <Content Include="bin\DesktopGL\AnyCPU\Release\Content\Images\Other\pause.png" />
-    <Content Include="bin\DesktopGL\AnyCPU\Release\Content\Images\Players\Blue\cw_blue01.png" />
-    <Content Include="bin\DesktopGL\AnyCPU\Release\Content\Images\Players\Blue\cw_blue02.png" />
-    <Content Include="bin\DesktopGL\AnyCPU\Release\Content\Images\Players\Blue\cw_blue03.png" />
-    <Content Include="bin\DesktopGL\AnyCPU\Release\Content\Images\Players\Blue\cw_blue04.png" />
-    <Content Include="bin\DesktopGL\AnyCPU\Release\Content\Images\Players\Blue\cw_blue05.png" />
-    <Content Include="bin\DesktopGL\AnyCPU\Release\Content\Images\Players\Blue\cw_blue06.png" />
-    <Content Include="bin\DesktopGL\AnyCPU\Release\Content\Images\Players\Blue\cw_blue07.png" />
-    <Content Include="bin\DesktopGL\AnyCPU\Release\Content\Images\Players\Blue\cw_blue08.png" />
-    <Content Include="bin\DesktopGL\AnyCPU\Release\Content\Images\Players\Blue\cw_blue09.png" />
-    <Content Include="bin\DesktopGL\AnyCPU\Release\Content\Images\Players\Blue\cw_blue10.png" />
-    <Content Include="bin\DesktopGL\AnyCPU\Release\Content\Images\Players\Blue\cw_blue11.png" />
-    <Content Include="bin\DesktopGL\AnyCPU\Release\Content\Images\Players\Blue\cw_blue12.png" />
-    <Content Include="bin\DesktopGL\AnyCPU\Release\Content\Images\Players\Blue\cw_blue13.png" />
-    <Content Include="bin\DesktopGL\AnyCPU\Release\Content\Images\Players\Blue\cw_blue14.png" />
-    <Content Include="bin\DesktopGL\AnyCPU\Release\Content\Images\Players\Blue\cw_blue15.png" />
-    <Content Include="bin\DesktopGL\AnyCPU\Release\Content\Images\Players\Blue\cw_blue16.png" />
-    <Content Include="bin\DesktopGL\AnyCPU\Release\Content\Images\Players\Blue\cw_blue17.png" />
-    <Content Include="bin\DesktopGL\AnyCPU\Release\Content\Images\Players\Blue\cw_blue18.png" />
-    <Content Include="bin\DesktopGL\AnyCPU\Release\Content\Images\Players\Blue\cw_blue19.png" />
-    <Content Include="bin\DesktopGL\AnyCPU\Release\Content\Images\Players\Blue\cw_blue20.png" />
-    <Content Include="bin\DesktopGL\AnyCPU\Release\Content\Images\Players\Blue\cw_blue21.png" />
-    <Content Include="bin\DesktopGL\AnyCPU\Release\Content\Images\Players\Blue\cw_blue22.png" />
-    <Content Include="bin\DesktopGL\AnyCPU\Release\Content\Images\Players\Blue\cw_blue23.png" />
-    <Content Include="bin\DesktopGL\AnyCPU\Release\Content\Images\Players\Blue\cw_blue24.png" />
-    <Content Include="bin\DesktopGL\AnyCPU\Release\Content\Images\Players\Blue\cw_blue25.png" />
-    <Content Include="bin\DesktopGL\AnyCPU\Release\Content\Images\Players\Blue\cw_blue26.png" />
-    <Content Include="bin\DesktopGL\AnyCPU\Release\Content\Images\Players\Blue\cw_blue27.png" />
-    <Content Include="bin\DesktopGL\AnyCPU\Release\Content\Images\Players\Blue\cw_blue28.png" />
-    <Content Include="bin\DesktopGL\AnyCPU\Release\Content\Images\Players\Blue\cw_blue29.png" />
-    <Content Include="bin\DesktopGL\AnyCPU\Release\Content\Images\Players\Blue\cw_blue30.png" />
-    <Content Include="bin\DesktopGL\AnyCPU\Release\Content\Images\Players\Blue\cw_blue_min.png" />
-    <Content Include="bin\DesktopGL\AnyCPU\Release\Content\Images\Players\Blue\cw_blue_min.txt" />
-    <Content Include="bin\DesktopGL\AnyCPU\Release\Content\Images\Players\option.png" />
-    <Content Include="bin\DesktopGL\AnyCPU\Release\Content\Images\Players\plasmaShot.png" />
-    <Content Include="bin\DesktopGL\AnyCPU\Release\Content\Images\Players\plasmaShotBlue.png" />
-    <Content Include="bin\DesktopGL\AnyCPU\Release\Content\Images\Players\Red\cw_red01.png" />
-    <Content Include="bin\DesktopGL\AnyCPU\Release\Content\Images\Players\Red\cw_red02.png" />
-    <Content Include="bin\DesktopGL\AnyCPU\Release\Content\Images\Players\Red\cw_red03.png" />
-    <Content Include="bin\DesktopGL\AnyCPU\Release\Content\Images\Players\Red\cw_red04.png" />
-    <Content Include="bin\DesktopGL\AnyCPU\Release\Content\Images\Players\Red\cw_red05.png" />
-    <Content Include="bin\DesktopGL\AnyCPU\Release\Content\Images\Players\Red\cw_red06.png" />
-    <Content Include="bin\DesktopGL\AnyCPU\Release\Content\Images\Players\Red\cw_red07.png" />
-    <Content Include="bin\DesktopGL\AnyCPU\Release\Content\Images\Players\Red\cw_red08.png" />
-    <Content Include="bin\DesktopGL\AnyCPU\Release\Content\Images\Players\Red\cw_red09.png" />
-    <Content Include="bin\DesktopGL\AnyCPU\Release\Content\Images\Players\Red\cw_red10.png" />
-    <Content Include="bin\DesktopGL\AnyCPU\Release\Content\Images\Players\Red\cw_red11.png" />
-    <Content Include="bin\DesktopGL\AnyCPU\Release\Content\Images\Players\Red\cw_red12.png" />
-    <Content Include="bin\DesktopGL\AnyCPU\Release\Content\Images\Players\Red\cw_red13.png" />
-    <Content Include="bin\DesktopGL\AnyCPU\Release\Content\Images\Players\Red\cw_red14.png" />
-    <Content Include="bin\DesktopGL\AnyCPU\Release\Content\Images\Players\Red\cw_red15.png" />
-    <Content Include="bin\DesktopGL\AnyCPU\Release\Content\Images\Players\Red\cw_red16.png" />
-    <Content Include="bin\DesktopGL\AnyCPU\Release\Content\Images\Players\Red\cw_red17.png" />
-    <Content Include="bin\DesktopGL\AnyCPU\Release\Content\Images\Players\Red\cw_red18.png" />
-    <Content Include="bin\DesktopGL\AnyCPU\Release\Content\Images\Players\Red\cw_red19.png" />
-    <Content Include="bin\DesktopGL\AnyCPU\Release\Content\Images\Players\Red\cw_red20.png" />
-    <Content Include="bin\DesktopGL\AnyCPU\Release\Content\Images\Players\Red\cw_red21.png" />
-    <Content Include="bin\DesktopGL\AnyCPU\Release\Content\Images\Players\Red\cw_red22.png" />
-    <Content Include="bin\DesktopGL\AnyCPU\Release\Content\Images\Players\Red\cw_red23.png" />
-    <Content Include="bin\DesktopGL\AnyCPU\Release\Content\Images\Players\Red\cw_red24.png" />
-    <Content Include="bin\DesktopGL\AnyCPU\Release\Content\Images\Players\Red\cw_red25.png" />
-    <Content Include="bin\DesktopGL\AnyCPU\Release\Content\Images\Players\Red\cw_red26.png" />
-    <Content Include="bin\DesktopGL\AnyCPU\Release\Content\Images\Players\Red\cw_red27.png" />
-    <Content Include="bin\DesktopGL\AnyCPU\Release\Content\Images\Players\Red\cw_red28.png" />
-    <Content Include="bin\DesktopGL\AnyCPU\Release\Content\Images\Players\Red\cw_red29.png" />
-    <Content Include="bin\DesktopGL\AnyCPU\Release\Content\Images\Players\Red\cw_red30.png" />
-    <Content Include="bin\DesktopGL\AnyCPU\Release\Content\Images\Players\Red\cw_red_min.png" />
-    <Content Include="bin\DesktopGL\AnyCPU\Release\Content\Images\Players\Red\cw_red_min.txt" />
-    <Content Include="bin\DesktopGL\AnyCPU\Release\Content\Maps\w1.txt" />
-    <Content Include="bin\DesktopGL\AnyCPU\Release\Content\Maps\w1_map.txt" />
-    <Content Include="bin\DesktopGL\AnyCPU\Release\CrossPlat.exe" />
-    <Content Include="bin\DesktopGL\AnyCPU\Release\CrossPlat.pdb" />
-    <Content Include="bin\DesktopGL\AnyCPU\Release\log.txt" />
-    <Content Include="bin\DesktopGL\AnyCPU\Release\MonoGame.Framework.dll" />
-    <Content Include="bin\DesktopGL\AnyCPU\Release\x64\SDL2.dll" />
-    <Content Include="bin\DesktopGL\AnyCPU\Release\x64\soft_oal.dll" />
-    <Content Include="bin\DesktopGL\AnyCPU\Release\x86\SDL2.dll" />
-    <Content Include="bin\DesktopGL\AnyCPU\Release\x86\soft_oal.dll" />
     <Content Include="Content\3d\CosmicWasp\CW_Textures\BlackAndNeonGreen\CosmicWasp_BaseColor.png" />
     <Content Include="Content\3d\CosmicWasp\CW_Textures\BlackAndNeonGreen\CosmicWasp_Diffuse.png" />
     <Content Include="Content\3d\CosmicWasp\CW_Textures\BlackAndNeonGreen\CosmicWasp_Glossiness.png" />
@@ -315,71 +235,11 @@
     <Content Include="Content\Images\Bg\brick2.png" />
     <Content Include="Content\Images\Enemy\enemy1.png" />
     <Content Include="Content\Images\Other\pause.png" />
-    <Content Include="Content\Images\Players\Blue\cw_blue01.png" />
-    <Content Include="Content\Images\Players\Blue\cw_blue02.png" />
-    <Content Include="Content\Images\Players\Blue\cw_blue03.png" />
-    <Content Include="Content\Images\Players\Blue\cw_blue04.png" />
-    <Content Include="Content\Images\Players\Blue\cw_blue05.png" />
-    <Content Include="Content\Images\Players\Blue\cw_blue06.png" />
-    <Content Include="Content\Images\Players\Blue\cw_blue07.png" />
-    <Content Include="Content\Images\Players\Blue\cw_blue08.png" />
-    <Content Include="Content\Images\Players\Blue\cw_blue09.png" />
-    <Content Include="Content\Images\Players\Blue\cw_blue10.png" />
-    <Content Include="Content\Images\Players\Blue\cw_blue11.png" />
-    <Content Include="Content\Images\Players\Blue\cw_blue12.png" />
-    <Content Include="Content\Images\Players\Blue\cw_blue13.png" />
-    <Content Include="Content\Images\Players\Blue\cw_blue14.png" />
-    <Content Include="Content\Images\Players\Blue\cw_blue15.png" />
-    <Content Include="Content\Images\Players\Blue\cw_blue16.png" />
-    <Content Include="Content\Images\Players\Blue\cw_blue17.png" />
-    <Content Include="Content\Images\Players\Blue\cw_blue18.png" />
-    <Content Include="Content\Images\Players\Blue\cw_blue19.png" />
-    <Content Include="Content\Images\Players\Blue\cw_blue20.png" />
-    <Content Include="Content\Images\Players\Blue\cw_blue21.png" />
-    <Content Include="Content\Images\Players\Blue\cw_blue22.png" />
-    <Content Include="Content\Images\Players\Blue\cw_blue23.png" />
-    <Content Include="Content\Images\Players\Blue\cw_blue24.png" />
-    <Content Include="Content\Images\Players\Blue\cw_blue25.png" />
-    <Content Include="Content\Images\Players\Blue\cw_blue26.png" />
-    <Content Include="Content\Images\Players\Blue\cw_blue27.png" />
-    <Content Include="Content\Images\Players\Blue\cw_blue28.png" />
-    <Content Include="Content\Images\Players\Blue\cw_blue29.png" />
-    <Content Include="Content\Images\Players\Blue\cw_blue30.png" />
     <Content Include="Content\Images\Players\Blue\cw_blue_min.png" />
     <Content Include="Content\Images\Players\Blue\cw_blue_min.txt" />
     <Content Include="Content\Images\Players\option.png" />
     <Content Include="Content\Images\Players\plasmaShot.png" />
     <Content Include="Content\Images\Players\plasmaShotBlue.png" />
-    <Content Include="Content\Images\Players\Red\cw_red01.png" />
-    <Content Include="Content\Images\Players\Red\cw_red02.png" />
-    <Content Include="Content\Images\Players\Red\cw_red03.png" />
-    <Content Include="Content\Images\Players\Red\cw_red04.png" />
-    <Content Include="Content\Images\Players\Red\cw_red05.png" />
-    <Content Include="Content\Images\Players\Red\cw_red06.png" />
-    <Content Include="Content\Images\Players\Red\cw_red07.png" />
-    <Content Include="Content\Images\Players\Red\cw_red08.png" />
-    <Content Include="Content\Images\Players\Red\cw_red09.png" />
-    <Content Include="Content\Images\Players\Red\cw_red10.png" />
-    <Content Include="Content\Images\Players\Red\cw_red11.png" />
-    <Content Include="Content\Images\Players\Red\cw_red12.png" />
-    <Content Include="Content\Images\Players\Red\cw_red13.png" />
-    <Content Include="Content\Images\Players\Red\cw_red14.png" />
-    <Content Include="Content\Images\Players\Red\cw_red15.png" />
-    <Content Include="Content\Images\Players\Red\cw_red16.png" />
-    <Content Include="Content\Images\Players\Red\cw_red17.png" />
-    <Content Include="Content\Images\Players\Red\cw_red18.png" />
-    <Content Include="Content\Images\Players\Red\cw_red19.png" />
-    <Content Include="Content\Images\Players\Red\cw_red20.png" />
-    <Content Include="Content\Images\Players\Red\cw_red21.png" />
-    <Content Include="Content\Images\Players\Red\cw_red22.png" />
-    <Content Include="Content\Images\Players\Red\cw_red23.png" />
-    <Content Include="Content\Images\Players\Red\cw_red24.png" />
-    <Content Include="Content\Images\Players\Red\cw_red25.png" />
-    <Content Include="Content\Images\Players\Red\cw_red26.png" />
-    <Content Include="Content\Images\Players\Red\cw_red27.png" />
-    <Content Include="Content\Images\Players\Red\cw_red28.png" />
-    <Content Include="Content\Images\Players\Red\cw_red29.png" />
-    <Content Include="Content\Images\Players\Red\cw_red30.png" />
     <Content Include="Content\Images\Players\Red\cw_red_min.png" />
     <Content Include="Content\Images\Players\Red\cw_red_min.txt" />
     <Content Include="Content\Maps\w1.txt" />
@@ -533,10 +393,16 @@
     <Content Include="Content\_pack\Props\Stair_Top.png" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="bin\DesktopGL\Content\" />
     <Folder Include="Content\bin\DesktopGL\Music\" />
     <Folder Include="Content\obj\DesktopGL\Music\" />
     <Folder Include="Source\World\Rounds\" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath)\MonoGame\v3.0\MonoGame.Content.Builder.targets" />

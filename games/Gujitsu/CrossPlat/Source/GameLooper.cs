@@ -15,7 +15,7 @@ namespace GameSystem
         public int virtualWidth = 1920,
                    virtualHeight = 1080;
 
-        public bool fullScreen = false;
+        public bool fullScreen = true;
     }
 
     public class SmartFramerate

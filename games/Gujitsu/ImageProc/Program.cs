@@ -2,6 +2,7 @@
 using System.IO;
 using System.Drawing;
 using System.Drawing.Imaging;
+using System.Linq;
 
 namespace ImageProc
 {
@@ -35,6 +36,8 @@ namespace ImageProc
 
                 Proc(dest, prefix);
             }
+
+            Console.ReadLine();
         }
 
         static void ProcX(string destino, string prefix)
@@ -52,19 +55,37 @@ namespace ImageProc
                 return;
             }
 
-            var sample = new Bitmap(dir + "\\" + prefix + (new DirectoryInfo(dir).GetFiles().Length < 100 ? "01.png" : "0001.png"));
+            var myFilesList = new DirectoryInfo(dir).GetFiles().OrderBy( y=> y.FullName ).ToArray();
+
+            if (myFilesList.Length < 3)
+                return;
+
+            int totFrames = myFilesList.Length,
+                widthPadrao = 0,
+                totHeight = 0;
+
+            using (var sample = new Bitmap(dir + "\\" + myFilesList[3]))
+            {
+                widthPadrao = sample.Width;
+                totHeight = sample.Height;
+            }
 
             string fileTargetName = dir + "\\" + prefix + "_min.png",
                     fileTargetNameMap = dir + "\\" + prefix + "_min.txt";
 
             Console.WriteLine(" >> target mini => " + fileTargetName);
+            
+            if (File.Exists(fileTargetName))
+            {
+                totFrames--;
+                File.Delete(fileTargetName);
+            }
 
-            if (File.Exists(fileTargetName)) File.Delete(fileTargetName);
-            if (File.Exists(fileTargetNameMap)) File.Delete(fileTargetNameMap);
-
-            int totFrames = new DirectoryInfo(dir).GetFiles().Length,
-                widthPadrao = sample.Width,
-                totHeight = sample.Height;
+            if (File.Exists(fileTargetNameMap))
+            {
+                totFrames--;
+                File.Delete(fileTargetNameMap);
+            }            
 
             Console.WriteLine(" widthPadrao => " + widthPadrao);
             Console.WriteLine(" totFrames => " + totFrames);
@@ -75,10 +96,14 @@ namespace ImageProc
 
             using (var sw = new StreamWriter(fileTargetNameMap))
             {
-                for (int i = 1; i <= totFrames; i++)
+                foreach (var currentFrame in myFilesList)
                 {
-                    var currentFrame = dir + "\\" + prefix + (totFrames < 100 ? i.ToString("00") : i.ToString("000")) + ".png";
-                    var sampleItem = new Bitmap(currentFrame);
+                    if (currentFrame.FullName.EndsWith(".txt"))
+                        continue;
+                    if (currentFrame.FullName.Contains("min."))
+                        continue;
+
+                    var sampleItem = new Bitmap(currentFrame.FullName);
                    
                     int minX = 99999, maxX = 0;                   
 
@@ -111,13 +136,16 @@ namespace ImageProc
             {
                 int xCustomAcc = 0;
 
-                for (int i = 1; i <= totFrames; i++)
+                foreach (var currentFrame in myFilesList)
                 {
-                    var currentFrame = dir + "\\" + prefix + (totFrames < 100 ? i.ToString("00") : i.ToString("000")) + ".png";
+                    if (currentFrame.FullName.EndsWith(".txt"))
+                        continue;
+                    if (currentFrame.FullName.Contains("min."))
+                        continue;
 
-                    Console.WriteLine(" currentFrame => " + currentFrame);
+                    Console.WriteLine(" currentFrame => " + currentFrame.FullName);
 
-                    var sampleItem = new Bitmap(currentFrame);
+                    var sampleItem = new Bitmap(currentFrame.FullName);
 
                     using (Graphics grD = Graphics.FromImage(finalBitmap))
                     {
