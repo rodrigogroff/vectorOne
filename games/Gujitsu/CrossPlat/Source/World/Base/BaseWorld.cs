@@ -1,7 +1,6 @@
 ﻿using System.Collections.Generic;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Media;
-using Microsoft.Xna.Framework.Graphics;
 
 namespace GameSystem
 {
@@ -52,8 +51,6 @@ namespace GameSystem
 			drawRect.Width = go.virtualWidth;
 			drawRect.Height = go.virtualHeight;
 
-			//go.im.LoadImage("Other\\pause.png", ref imgPause, ref go.gdm);
-			
 			if (LoadPlayers)
 			{
 				p1 = new Player(this, PlayerSelection.PlayerOne, PlayerSkin.White);

@@ -66,15 +66,15 @@ namespace GameSystem
             }
             else
             {
-                if (gps.DPad.Up == ButtonState.Pressed) { if (CanGoUp) moveUp = true; IsUp = true; }
-                if (gps.DPad.Left == ButtonState.Pressed) if (CanGoLeft) moveLeft = true;
-                if (gps.DPad.Right == ButtonState.Pressed) if (CanGoDown) moveRight = true;
-                if (gps.DPad.Down == ButtonState.Pressed) { if (CanGoRight) moveDown = true; IsDown = true; }
+                if (gps.DPad.Up == ButtonState.Pressed || gps.ThumbSticks.Left.Y > 0 ) { if (CanGoUp) moveUp = true; IsUp = true; }
+                if (gps.DPad.Left == ButtonState.Pressed || gps.ThumbSticks.Left.X < 0) if (CanGoLeft) moveLeft = true;
+                if (gps.DPad.Right == ButtonState.Pressed || gps.ThumbSticks.Left.X > 0) if (CanGoDown) moveRight = true;
+                if (gps.DPad.Down == ButtonState.Pressed || gps.ThumbSticks.Left.Y < 0) { if (CanGoRight) moveDown = true; IsDown = true; }
 
-                if (gps.Buttons.A == ButtonState.Pressed) if (!IsAutoFire) { fireTimer = 0; IsAutoFire = true; }
-                if (gps.Buttons.B == ButtonState.Pressed) { }
-                if (gps.Buttons.X == ButtonState.Pressed) { }
+                if (gps.Buttons.X == ButtonState.Pressed) if (!IsAutoFire) { fireTimer = 0; IsAutoFire = true; }
+                if (gps.Buttons.A == ButtonState.Pressed) { }
                 if (gps.Buttons.Y == ButtonState.Pressed) { }
+                if (gps.Buttons.B == ButtonState.Pressed) DeployOption();
             }
 
             // -------------------------------------

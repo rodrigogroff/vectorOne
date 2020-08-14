@@ -5,8 +5,8 @@ namespace GameSystem
 {
 	public partial class Player : GameObject
 	{
-        public List<int> framesDx = new List<int>();
-        public List<int> framesDy = new List<int>();
+        public List<int> framesDx = new List<int>(),
+						 framesDy = new List<int>();
 
         public void LoadContent(GameOptions go)
 		{
@@ -15,7 +15,6 @@ namespace GameSystem
 			switch (shipSkin)
 			{
 				case PlayerSkin.White:
-                    //lstSpaceShipImg = lib.LoadImageSequence("Players\\Blue\\cw_blue", 30, ref go.gdm);        // 78 milis
                     lstSpaceShipImg = lib.LoadImageMappedSequence("Players\\Blue\\cw_blue", 30, ref go.gdm, ref framesDx, ref framesDy);    // 63 milis
                     break;
 

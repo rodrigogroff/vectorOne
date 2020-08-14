@@ -157,11 +157,7 @@ namespace GameSystem
 
             try
 			{
-                // -------------------------------------------
-                // render to virtual resolution
-                // -------------------------------------------
-
-                #region - code - 
+                #region - render to virtual resolution - 
 
                 GraphicsDevice.SetRenderTarget(rTarget);
 				GraphicsDevice.Clear(Color.Black);
@@ -172,11 +168,7 @@ namespace GameSystem
 
                 #endregion
 
-                // -------------------------------------------
-                // render to full screen
-                // -------------------------------------------
-
-                #region - code - 
+                #region - render to current full screen - 
 
                 GraphicsDevice.SetRenderTarget(null);
                 GraphicsDevice.Clear(Color.Black);
