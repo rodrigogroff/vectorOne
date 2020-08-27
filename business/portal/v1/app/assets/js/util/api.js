@@ -2,8 +2,8 @@
 const ApiLocation = {
     //api_host: 'http://localhost',
     //api_port: '18524',
-    api_host: 'http://node46502-slayer.jelastic.saveincloud.net',
-    api_port: '11542',
+    api_host: 'https://node46502-slayer.jelastic.saveincloud.net',
+    api_port: '11145',
     api_port_images: '8080',
     api_portal: '/api/v1/portal/',
 }

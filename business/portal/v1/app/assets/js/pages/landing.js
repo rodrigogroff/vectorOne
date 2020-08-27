@@ -16,6 +16,12 @@ $(function () {
 
         var x = getUrlVars();
 
+        if (window.location.hostname != "slayer.jelastic.saveincloud.net")
+        {
+            window.location.href = "https://slayer.jelastic.saveincloud.net";
+            return;
+        }
+
         if (x["verifID"] === null || x["verifID"] === undefined) {
             var url = window.location.href;
             window.location.href = url + "?verifID=dc7d123e";
