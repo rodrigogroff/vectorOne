@@ -24,7 +24,7 @@ namespace GameSystem
 			{
 				if (curFrame < 29) ++curFrame;
 			}
-			else if (InternalTimer % 2 == 0)
+			else 
 			{
 				if (curFrame > 14) --curFrame; else if (curFrame < 14) ++curFrame;
 			}
