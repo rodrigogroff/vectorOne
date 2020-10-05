@@ -24,7 +24,7 @@ namespace GameSystem
 		public string MyMapName = "";
 
 		public bool IsPaused = false,
-					IsFadeIn = true,
+					IsFadeIn = false,
 					IsFadeOut = false,
 					ChangeScreen = false,
 					ExitGame = false;

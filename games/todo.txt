@@ -1,0 +1,67 @@
+Meu login 10624505
+Senha: tkE@@2020
+
+14/08/20	testar joystick xbox			ok
+14/08/20	testar joystick xbox - sticks		ok
+14/08/20	testar joystick ps3 			ok	
+14/08/20	testar joystick ps3 - sticks		ok	
+14/08/20	turbinas glow				ok
+14/08/20	turbinas glow animated			ok
+
+workflow de modelagem novo				nok
+turbinas no espaço modelo rocket			nok
+
+
+refazer animação do player
+
+(efeitos de luzes / turbinas / etc )
+
+	idle loop meio 				nok	[ 1 a 30]	
+	para baixo				nok	[31 a 45]
+	idle loop baixo 			nok	[46 a 75]
+	para cima				nok	[76 a 90]
+	idle loop cima 				nok	[91 a 120]
+
+
+
+---------------------------
+LINKS para FX
+---------------------------
+https://www.turbosquid.com/FullPreview/Index.cfm/ID/159344
+https://www.turbosquid.com/FullPreview/Index.cfm/ID/159420
+
+// exemplo de exaustor bacana em maya
+https://docs.arnoldrenderer.com/display/A5AFMUG/Spaceship
+https://www.youtube.com/watch?v=x-TEvmgfFY4
+
+// exemplo de exaustor perfeito
+https://blendermarket.com/products/sci-fi-plasma-engines--exhausts
+
+// efeitos de video
+https://assetstore.unity.com/packages/2d/textures-materials/electricity-effects-fx-electric-130151
+https://assetstore.unity.com/packages/vfx/particles/explosion-113281
+https://assetstore.unity.com/packages/vfx/particles/shake-wave-i-94064
+https://assetstore.unity.com/packages/templates/systems/variabullet2d-projectile-system-152528
+
+---------------------------------
+Modelos 3d para inspiração
+---------------------------
+
+https://sketchfab.com/3d-models/cockpit-space-fighter-bdadfbe7b5834fb7b7b155e71e83b8e6
+https://www.turbosquid.com/3d-models/fighter-cockpit-3d-lwo/600745
+https://www.turbosquid.com/3d-models/fighter-cockpit-pilots-3d-model/601390
+
+https://www.cgtrader.com/3d-models/space/spaceship/sci-fi-fighter-cockpit-4
+https://www.cgtrader.com/3d-models/space/spaceship/spaceship-cockpit-v4
+
+https://sketchfab.com/subryder68/collections/spaceships
+https://sketchfab.com/saphires/collections/sci-fi-vehicles
+https://sketchfab.com/3d-models/raptor-a9c8bb2cc8084da889f44aa5d4909207
+https://sketchfab.com/3d-models/ancient-ship-ff8cae7eb0274441a1ada11f0bed0118
+https://sketchfab.com/3d-models/drone-01-laser-game-evo-24a883b386f643fbba37cfad0e52f9af
+https://sketchfab.com/3d-models/sf-light-drone-zr7-bdced13af1994ea8a0d0037ae6dd5d94
+https://sketchfab.com/3d-models/destroyer-gx4-5d82f2f59fda47e2bb4c25bc34d7126c
+https://sketchfab.com/3d-models/sf-frigate-sr4-03aa162122bc49d8b6334fac068cdc81
+https://sketchfab.com/3d-models/nakamura-destroyer-class-iv-994b5474f59c48c3ac9b6a169bc9163a
+https://sketchfab.com/3d-models/sci-fi-jet-fighter-1bb532b1f7124a5d802e477a2a9489fe
+https://sketchfab.com/3d-models/sf-fighter-f50-7c8ae4dc17af4b85b73cc5ce4cdace45
