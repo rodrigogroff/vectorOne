@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using System.Diagnostics;
 
 namespace GameSystem
 {
@@ -15,11 +14,11 @@ namespace GameSystem
 			switch (shipSkin)
 			{
 				case PlayerSkin.White:
-                    lstSpaceShipImg = lib.LoadImageMappedSequence("Players\\Blue\\cw_blue", 30, ref go.gdm, ref framesDx, ref framesDy);    // 63 milis
-                    break;
+                    lstSpaceShipImg = lib.LoadImageMappedBinSequence("Players\\Blue\\cw_blue", 120, ref go.gdm, ref framesDx, ref framesDy);
+					break;
 
                 case PlayerSkin.Red:
-                    lstSpaceShipImg = lib.LoadImageMappedSequence("Players\\Red\\cw_red", 30, ref go.gdm, ref framesDx, ref framesDy);
+                    lstSpaceShipImg = lib.LoadImageMappedBinSequence("Players\\Red\\cw_red", 120, ref go.gdm, ref framesDx, ref framesDy);
                     break;
 			}
 

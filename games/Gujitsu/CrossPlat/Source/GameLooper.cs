@@ -3,6 +3,7 @@ using System.IO;
 using System.Diagnostics;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using System.Security.Cryptography;
 
 namespace GameSystem
 {
@@ -15,7 +16,7 @@ namespace GameSystem
         public int virtualWidth = 1920,
                    virtualHeight = 1080;
 
-        public bool fullScreen = true;
+        public bool fullScreen = false;
     }
 
     public class SmartFramerate
@@ -163,7 +164,10 @@ namespace GameSystem
 				GraphicsDevice.Clear(Color.Black);
 				batch.Begin(blendState: BlendState.NonPremultiplied);
 				gameWorld.Draw(batch);
-                batch.DrawString(font, "FPS:" + smartFPS.framerate.ToString("00"), new Vector2(10, 10), Color.White);
+                //batch.DrawString(font, "FPS:" + smartFPS.framerate.ToString("00"), new Vector2(10, 10), Color.White);
+
+                batch.DrawString(font, "p1 " + gameWorld.p1.curFrame, new Vector2(10, 10), Color.White);
+
                 batch.End();
 
                 #endregion

@@ -18,8 +18,8 @@ namespace GameSystem
 		public List<GameObject> lstPlasmaFire = new List<GameObject>(),
 								lstOption = new List<GameObject>();
 
-		int powerLevel = 1, // start power
-			curFrame = 14,  // main image star index
+		public int powerLevel = 1, // start power
+			curFrame = 0,  // main image star index
 			fireTimer = 1,  // counter 			
 			accel = 1;
 

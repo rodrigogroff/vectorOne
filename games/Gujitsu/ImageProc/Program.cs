@@ -3,6 +3,8 @@ using System.IO;
 using System.Drawing;
 using System.Drawing.Imaging;
 using System.Linq;
+using System.Collections.Generic;
+using System.Drawing.Drawing2D;
 
 namespace ImageProc
 {
@@ -21,8 +23,8 @@ namespace ImageProc
 
             if (dest == "build")
             {
-                ProcX("Players\\Blue", "cw_blue");
-                ProcX("Players\\Red", "cw_red");
+                ProcF("Players\\Blue", "cw_blue");
+                ProcF("Players\\Red", "cw_red");
 
                 Console.WriteLine();
                 Console.WriteLine(">> ------ Build Complete! ------------");
@@ -38,6 +40,128 @@ namespace ImageProc
             }
 
             Console.ReadLine();
+        }
+
+        static void ProcF(string destino, string prefix)
+        {
+            string BaseApp = "CrossPlat";
+            string currentDir = Directory.GetCurrentDirectory() + "\\" + BaseApp + "\\Content\\Images\\";
+            
+            currentDir = currentDir.Replace("ImageProc\\bin\\Release\\", "");
+
+            string dir = currentDir + destino;
+
+            Console.WriteLine(dir);
+
+            if (!Directory.Exists(dir))
+            {
+                Console.WriteLine("Diretório não existe");
+                return;
+            }
+
+            var myFilesList = new DirectoryInfo(dir).GetFiles().OrderBy(y => y.FullName).ToArray();
+
+            if (myFilesList.Length < 3)
+                return;
+
+            int totFrames = myFilesList.Length;                
+
+            string fileTargetName = dir + "\\" + prefix + "_min.bin",
+                    fileTargetNameMap = dir + "\\" + prefix + "_min.txt";
+
+            Console.WriteLine(" >> PROC FULL => " + fileTargetName);
+
+            if (File.Exists(fileTargetName))
+            {
+                totFrames--;
+                File.Delete(fileTargetName);
+            }
+
+            if (File.Exists(fileTargetNameMap))
+            {
+                totFrames--;
+                File.Delete(fileTargetNameMap);
+            }
+
+            Console.WriteLine(" totFrames => " + totFrames);
+
+            List<byte[]> finalFile = new List<byte[]>();
+
+            using (var sw = new StreamWriter(fileTargetNameMap))
+            {
+                int xCustomAcc = 0;
+                
+                foreach (var currentFrame in myFilesList)
+                {
+                    if (currentFrame.FullName.EndsWith(".txt")) continue;
+                    if (currentFrame.FullName.Contains("min.")) continue;
+
+                    Console.WriteLine(" currentFrame => " + currentFrame.FullName);
+
+                    // obter dados do original
+
+                    var sampleItem = new Bitmap(currentFrame.FullName);
+
+                    int minX = 99999, maxX = 0;
+                    int minY = 99999, maxY = 0;
+
+                    using (Graphics grD = Graphics.FromImage(sampleItem))
+                    {
+                        for (int y = 0; y < sampleItem.Height; y++)
+                            for (int x = 0; x < sampleItem.Width; ++x)
+                            {
+                                Color utd = sampleItem.GetPixel(x, y);
+
+                                if (utd.A > 0)
+                                {
+                                    if (x < minX) minX = x;
+                                    if (x > maxX) maxX = x;
+
+                                    if (y < minY) minY = y;
+                                    if (y > maxY) maxY = y;
+                                }
+                            }
+                    }
+
+                    int curSafeWidth = maxX - minX;
+                    int curSafeHeight = maxY - minY;
+
+                    Bitmap finalBitmap = new Bitmap(curSafeWidth, curSafeHeight);
+
+                    using (Graphics grD = Graphics.FromImage(finalBitmap))
+                    {
+                        Rectangle destRegion = new Rectangle(0, 0, curSafeWidth, curSafeHeight);
+                        Rectangle srcRegion = new Rectangle(minX, minY, curSafeWidth, curSafeHeight);
+
+                        grD.DrawImage(sampleItem, destRegion, srcRegion, GraphicsUnit.Pixel);
+                    }
+
+                    using (var stream = new MemoryStream())
+                    {
+                        finalBitmap.Save(stream, System.Drawing.Imaging.ImageFormat.Png);
+
+                        var ar = stream.ToArray();
+
+                        sw.WriteLine(curSafeWidth + "," + curSafeHeight + "," + minX + "," + minY + "," + ar.Length);
+
+                        finalFile.Add(ar);
+                    }
+                }
+            }
+
+            byte[] rv = new byte[finalFile.Sum(a => a.Length)];
+            int offset = 0;
+            foreach (byte[] array in finalFile)
+            {
+                System.Buffer.BlockCopy(array, 0, rv, offset, array.Length);
+                offset += array.Length;
+            }
+
+            File.WriteAllBytes("test.bin", rv);
+            File.Move("test.bin", fileTargetName);
+
+            Console.WriteLine(" >> Salvo com sucesso! ");
+            Console.WriteLine();
         }
 
         static void ProcX(string destino, string prefix)
@@ -168,12 +292,7 @@ namespace ImageProc
                         Rectangle destRegion = new Rectangle(xCustomAcc, 0, curSafeWidth, maxY - minY);
                         Rectangle srcRegion = new Rectangle(minX, minY, curSafeWidth, maxY - minY);
 
-                        sw.Write(destRegion.X.ToString()); sw.Write(",");
-                        sw.Write(destRegion.Y.ToString()); sw.Write(",");
-                        sw.Write(destRegion.Width.ToString()); sw.Write(",");
-                        sw.Write(destRegion.Height.ToString()); sw.Write(",");
-                        sw.Write(minX); sw.Write(",");
-                        sw.Write(minY); sw.Write(";");
+                        sw.WriteLine(destRegion.X + "," + destRegion.Y + "," + destRegion.Width + "," + destRegion.Height + "," + minX + "," + minY);
 
                         grD.DrawImage(sampleItem, destRegion, srcRegion, GraphicsUnit.Pixel);
 
