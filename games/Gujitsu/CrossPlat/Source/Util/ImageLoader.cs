@@ -64,9 +64,9 @@ namespace GameSystem
 
                 using (BinaryReader reader = new BinaryReader(ms))
                 {
-                    for (int indexImg = 1; indexImg <= frames; ++indexImg)
+                    for (int indexImg = 0; indexImg < frames; ++indexImg)
                     {
-                        var contentItem = lstMap[indexImg - 1];
+                        var contentItem = lstMap[indexImg];
                         var rectStr = contentItem.Split(',');
 
                         var width = Convert.ToInt32(rectStr[0]);
@@ -129,9 +129,9 @@ namespace GameSystem
                             var contents = sr.ReadToEnd(); 
                             var lstMap = contents.Split('\n');
 
-                            for (int indexImg = 1; indexImg <= frames; ++indexImg)
+                            for (int indexImg = 0; indexImg < frames; ++indexImg)
                             {                                
-                                var contentItem = lstMap[indexImg - 1];
+                                var contentItem = lstMap[indexImg];
                                 var rectStr = contentItem.Split(',');
 
                                 var rect = new Rectangle( Convert.ToInt32(rectStr[0]),  // X

@@ -96,6 +96,18 @@ namespace ImageProc
                     if (currentFrame.FullName.EndsWith(".txt")) continue;
                     if (currentFrame.FullName.Contains("min.")) continue;
 
+                    bool pass = false;
+
+                    for (int i = 0; i < 20; i++)
+                        if (currentFrame.FullName.Contains("0" + i.ToString().PadLeft(2, '0') + ".tif"))
+                        {
+                            pass = true;
+                            break;
+                        }
+
+                    if (pass)
+                        continue;                            
+
                     Console.WriteLine(" currentFrame => " + currentFrame.FullName);
 
                     // obter dados do original
@@ -122,6 +134,11 @@ namespace ImageProc
                                 }
                             }
                     }
+
+                    if (minY > 0 ) minY--;
+                    if (maxY < sampleItem.Height - 1) maxY++;
+                    if (minX > 0) minX--;
+                    if (maxX < sampleItem.Width - 1) maxX++;
 
                     int curSafeWidth = maxX - minX;
                     int curSafeHeight = maxY - minY;
